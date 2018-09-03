@@ -12,5 +12,9 @@ describe('WordFrequencyCalculator', function () {
   beforeEach(() => {
     wordFrequencyCalculator = new WordFrequencyCalculator(testData);
   })
-  
+
+  it("should be able to return the length of the array", () => {
+    const result = wordFrequencyCalculator.lengthOfArrayTest();
+    assert.strictEqual(result, 3);
+  })
 })

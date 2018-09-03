@@ -12,17 +12,17 @@ describe('WordFrequencyCalculator', function () {
 
   beforeEach(() => {
     wordFrequencyCalculator = new WordFrequencyCalculator(testData);
-  })
+  });
 
   it("should be able to return the length of the array", () => {
     const result = wordFrequencyCalculator.lengthOfArrayTest();
     assert.strictEqual(result, 3);
-  })
+  });
 
   it("should be able to create an array of words matching a regular expression", () => {
     const result = wordFrequencyCalculator.getArrayOfMatchingWords(testString).length;
     assert.strictEqual(result, 6);
-  })
+  });
 
   it("should be able to test the frequency of words in a string", () => {
     const result = wordFrequencyCalculator.calculateFrequencyFromString(testString);
@@ -32,8 +32,23 @@ describe('WordFrequencyCalculator', function () {
       frequency: 1,
       of: 1,
       words: 2
-    })
-  })
+    });
+  });
+
+  it("should be able to test the frequency of words in an array of strings", () => {
+    const result = wordFrequencyCalculator.calculateFrequency();
+    assert.deepStrictEqual(result, {
+      Testing: 1,
+      the: 1,
+      frequency: 1,
+      of: 1,
+      words: 5,
+      testing: 1,
+      capitalise: 1,
+      and: 1,
+      Capitalise: 1
+    });
+  });
 
 
-})
+});

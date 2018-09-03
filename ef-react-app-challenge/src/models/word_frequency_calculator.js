@@ -24,4 +24,9 @@ WordFrequencyCalculator.prototype.calculateFrequencyFromString = function (strin
   }, {});
 };
 
+WordFrequencyCalculator.prototype.calculateFrequency = function () {
+  const combinedString = this.arrayOfStrings.join();
+  return this.calculateFrequencyFromString(combinedString);
+};
+
 module.exports = WordFrequencyCalculator;

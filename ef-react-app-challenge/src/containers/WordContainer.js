@@ -1,4 +1,5 @@
 import React from 'react';
+import reviewsData from "../reviews.json";
 
 class WordContainer extends React.Component {
   constructor(props) {
@@ -6,7 +7,9 @@ class WordContainer extends React.Component {
     this.state = null;
   }
 
+
   render() {
+    console.log("DATA", reviewsData);
     return null;
   }
 }

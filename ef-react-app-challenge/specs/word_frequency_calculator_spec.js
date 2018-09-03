@@ -3,11 +3,12 @@ const WordFrequencyCalculator = require('../src/models/word_frequency_calculator
 
 describe('WordFrequencyCalculator', function () {
   let wordFrequencyCalculator;
-  const testData = [
-    "Testing the frequency of words",
+  let testData = [
+    "Testing the frequency of words words",
     "words words words",
     "testing capitalise and Capitalise"
-  ]
+  ];
+  let testString = testData[0];
 
   beforeEach(() => {
     wordFrequencyCalculator = new WordFrequencyCalculator(testData);
@@ -17,4 +18,23 @@ describe('WordFrequencyCalculator', function () {
     const result = wordFrequencyCalculator.lengthOfArrayTest();
     assert.strictEqual(result, 3);
   })
+
+  it("should be able to create an array of words matching a regular expression", () => {
+    const result = wordFrequencyCalculator.getArrayOfMatchingWords(testString).length;
+    assert.strictEqual(result, 6);
+  })
+
+  // it("should be able to test the frequency of words in a string", () => {
+  //   const testString = testData[2];
+  //   const result = wordFrequencyCalculator.getWordFrequencyFromString(testString);
+  //   assert.strictEqual(result, {
+  //     Testing: 1,
+  //     the: 1,
+  //     frequency: 1,
+  //     of: 1,
+  //     words: 2
+  //   })
+  // })
+
+
 })

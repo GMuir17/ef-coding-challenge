@@ -24,17 +24,16 @@ describe('WordFrequencyCalculator', function () {
     assert.strictEqual(result, 6);
   })
 
-  // it("should be able to test the frequency of words in a string", () => {
-  //   const testString = testData[2];
-  //   const result = wordFrequencyCalculator.getWordFrequencyFromString(testString);
-  //   assert.strictEqual(result, {
-  //     Testing: 1,
-  //     the: 1,
-  //     frequency: 1,
-  //     of: 1,
-  //     words: 2
-  //   })
-  // })
+  it("should be able to test the frequency of words in a string", () => {
+    const result = wordFrequencyCalculator.calculateFrequencyFromString(testString);
+    assert.deepStrictEqual(result, {
+      Testing: 1,
+      the: 1,
+      frequency: 1,
+      of: 1,
+      words: 2
+    })
+  })
 
 
 })

@@ -38,15 +38,13 @@ describe('WordFrequencyCalculator', function () {
   it("should be able to test the frequency of words in an array of strings", () => {
     const result = wordFrequencyCalculator.calculateFrequency();
     assert.deepStrictEqual(result, {
-      Testing: 1,
+      testing: 2,
       the: 1,
       frequency: 1,
       of: 1,
       words: 5,
-      testing: 1,
-      capitalise: 1,
+      capitalise: 2,
       and: 1,
-      Capitalise: 1
     });
   });
 

@@ -1,16 +1,21 @@
 import React from 'react';
-import reviewsData from "../reviews.json";
+import WordCountTable from '../components/WordCountTable.js';
+import reviewsData from '../reviews.json';
 
 class WordContainer extends React.Component {
   constructor(props) {
     super(props);
-    this.state = null;
+    this.state = {
+      reviews: reviewsData
+    };
   }
 
-
   render() {
-    console.log("DATA", reviewsData);
-    return null;
+    return (
+      <div className="word-container">
+        <WordCountTable />
+      </div>
+    )
   }
 }
 

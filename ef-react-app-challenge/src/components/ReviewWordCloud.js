@@ -8,16 +8,20 @@ const ReviewWordCloud = function (props) {
     return {text: wordArray[0], value: wordArray[1]}
   });
 
-  const fontSizeMapper = word => word.value * 30;
+  const fontSizeMapper = word => word.value * 25;
 
   return (
     <div>
       <h4 onClick={props.displayTable}>Show Table</h4>
+      <div className="word-cloud">
     <WordCloud
       data={data}
       fontSizeMapper={fontSizeMapper}
+      font={"sans-serif"}
     />
   </div>
+  </div>
+
   )
 }
 

@@ -12,7 +12,7 @@ const ReviewWordCloud = function (props) {
 
   return (
     <div>
-      <h4 onClick={props.displayTable}>Show Table</h4>
+      <h4 className="fake-link" onClick={props.displayTable}>Show Table</h4>
       <div className="word-cloud">
     <WordCloud
       data={data}

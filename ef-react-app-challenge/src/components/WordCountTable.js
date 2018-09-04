@@ -16,7 +16,7 @@ const WordCountTable = function(props) {
 
   return (
     <div>
-      <h4 onClick={props.displayWordCloud}>Show Word Cloud</h4>
+      <h4 className="fake-link" onClick={props.displayWordCloud}>Show Word Cloud</h4>
       <table>
         <caption>Word Frequency Table</caption>
         <tbody>

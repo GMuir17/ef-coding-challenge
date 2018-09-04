@@ -1,6 +1,6 @@
 import React from 'react';
 import WordCountTable from '../components/WordCountTable.js';
-import WordCloud from '../components/WordCloud.js';
+import ReviewWordCloud from '../components/ReviewWordCloud.js';
 import reviewsData from '../reviews.json';
 
 const WordFrequencyCalculator = require('../models/word_frequency_calculator.js');
@@ -31,7 +31,7 @@ class WordContainer extends React.Component {
     return (
       <div className="word-container">
         <WordCountTable wordFrequency={this.state.wordFrequencyObject}/>
-        <WordCloud wordFrequency={this.state.wordFrequencyObject}/>
+        <ReviewWordCloud wordFrequency={this.state.wordFrequencyObject}/>
       </div>
     )
   }

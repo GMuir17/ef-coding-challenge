@@ -10,9 +10,13 @@ class WordContainer extends React.Component {
     super(props);
     this.state = {
       reviews: reviewsData,
-      wordFrequencyObject: null
+      wordFrequencyObject: null,
+      tableView: true,
+      cloudView: false
     };
     this.calculateWordFrequency = this.calculateWordFrequency.bind(this);
+    this.displayWordCloud = this.displayWordCloud.bind(this);
+    this.displayTable = this.displayTable.bind(this);
   }
 
   componentDidMount() {
@@ -27,11 +31,44 @@ class WordContainer extends React.Component {
     })
   }
 
+  displayWordCloud() {
+    this.setState({
+      tableView: false,
+      cloudView: true
+    })
+  }
+
+  displayTable() {
+    this.setState({
+      tableView: true,
+      cloudView: false
+    })
+  }
+
   render() {
+    let cloudViewDisplay = null;
+    let tableViewDisplay = null;
+
+    if (this.state.cloudView) {
+      cloudViewDisplay =
+      <ReviewWordCloud
+        wordFrequency={this.state.wordFrequencyObject}
+        displayTable={this.displayTable}
+      />
+    }
+
+    if (this.state.tableView) {
+      tableViewDisplay =
+      <WordCountTable
+        wordFrequency={this.state.wordFrequencyObject}
+        displayWordCloud={this.displayWordCloud}
+      />
+    }
+
     return (
       <div className="word-container">
-        <WordCountTable wordFrequency={this.state.wordFrequencyObject}/>
-        <ReviewWordCloud wordFrequency={this.state.wordFrequencyObject}/>
+        {tableViewDisplay}
+        {cloudViewDisplay}
       </div>
     )
   }

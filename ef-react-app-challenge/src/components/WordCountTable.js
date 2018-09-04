@@ -1,23 +1,33 @@
 import React from 'react';
 
-  const WordCountTable = function(props) {
+const WordCountTable = function(props) {
+  if (!props.wordFrequency) return null;
+
+  const wordRow = props.wordFrequency.map((wordFrequencyArray, index) => {
     return (
-      <div>
-        <h4>Testing</h4>
-        <table>
-            <caption>Word Frequency Table</caption>
-          <tbody>
-            <tr>
-              <th>Word</th>
-              <th>Frequency</th>
-            </tr>
-            {/* <tr>
-              <td></td>
-            </tr> */}
-          </tbody>
-        </table>
-      </div>
+      <tr key={index}>
+        <td>{wordFrequencyArray[0]}</td>
+        <td>{wordFrequencyArray[1]}</td>
+      </tr>
     )
-  }
+  })
+
+  return (
+    <div>
+      <table>
+        <caption>Word Frequency Table</caption>
+        <tbody>
+          <tr>
+            <th>Word</th>
+            <th>Frequency</th>
+          </tr>
+        </tbody>
+        <tbody>
+          {wordRow}
+        </tbody>
+      </table>
+    </div>
+  )
+}
 
 export default WordCountTable;

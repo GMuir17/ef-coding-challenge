@@ -20,17 +20,16 @@ class WordContainer extends React.Component {
 
   calculateWordFrequency() {
     const wordFrequencyCalculator = new WordFrequencyCalculator(this.state.reviews);
-    const freqObjt = wordFrequencyCalculator.calculateFrequency();
+    const freqObjt = Object.entries(wordFrequencyCalculator.calculateFrequency());
     this.setState({
       wordFrequencyObject: freqObjt
     })
   }
 
   render() {
-    console.log("HEY", this.state.wordFrequencyObject);
     return (
       <div className="word-container">
-        <WordCountTable />
+        <WordCountTable wordFrequency={this.state.wordFrequencyObject}/>
       </div>
     )
   }

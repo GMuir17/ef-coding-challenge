@@ -4,9 +4,11 @@ const WordCountTable = function(props) {
   if (!props.wordFrequency) return null;
 
   const wordRow = props.wordFrequency.map((wordFrequencyArray, index) => {
+    const scaleNumber = wordFrequencyArray[1];
+    const style = {fontSize: `${scaleNumber}em`}
     return (
       <tr key={index}>
-        <td>{wordFrequencyArray[0]}</td>
+        <td style={style}>{wordFrequencyArray[0]}</td>
         <td>{wordFrequencyArray[1]}</td>
       </tr>
     )
